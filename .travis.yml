@@ -24,7 +24,7 @@ script:
 - cd bin
 - ./sakulstra_grt_main
 after_success:
-- bii user myuser -p $BII_MYUSER_PASSWORD
+- bii user sakulstra -p $BII_MYUSER_PASSWORD
 - bii publish
 env:
   global:
