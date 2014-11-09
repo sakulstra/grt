@@ -17,7 +17,7 @@ script:
 - cmake --version
 - bii init biicode_project
 - mkdir -p ./biicode_project/blocks/sakulstra/grt
-- mv !(biicode_project) ./biicode_project/blocks/sakulstra/grt
+- mv !(biicode_project/GRT) ./biicode_project/blocks/sakulstra/grt
 - cd biicode_project
 - bii find -um
 - bii cpp:build
