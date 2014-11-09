@@ -56,7 +56,7 @@ if(WIN32)
 elseif(APPLE)
      target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=c++11"  "-stdlib=libc++")
 else()
-     target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=c++11" "-Wl,--no-as-needed")
+     target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=gnu++11")
 endif()
 
 
