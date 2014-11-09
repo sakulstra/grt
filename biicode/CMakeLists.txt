@@ -51,13 +51,13 @@ ADD_BIICODE_TARGETS()
 # with LLVM, you might need to link the target with "-lc++abi"
 #
 # If you want your code to be portable and activate properly C++11, you have to handle it:
-if(WIN32)
-     target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=c++11")
-elseif(APPLE)
-     target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=c++11"  "-stdlib=libc++")
-else()
-     target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=gnu++11")
-endif()
+#if(WIN32)
+#     target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=c++11")
+#elseif(APPLE)
+#     target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=c++11"  "-stdlib=libc++")
+#else()
+#     target_compile_options(${BII_LIB_TARGET} PUBLIC "-std=gnu++11")
+#endif()
 
 
 
