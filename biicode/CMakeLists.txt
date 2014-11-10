@@ -7,13 +7,13 @@
 include(${CMAKE_HOME_DIRECTORY}/biicode.cmake)
 # Initializes block variables
 INIT_BIICODE_BLOCK()
+SET(BII_CREATE_LIB TRUE)
 # This function creates the following variables:
 #     ${BII_BLOCK_NAME}       The name of the current block (e.g. "box2d")
 #     ${BII_BLOCK_USER}       The user's name (e.g. "phil")
 #     ${BII_BLOCK_PREFIX}     The directory where the block is located ("blocks" or "deps")
 
 # Also it loads variables from the cmake/bii_user_block_vars.cmake
-SET(BII_CREATE_LIB True)
 #     ${BII_CREATE_LIB}       TRUE if you want to create the library
 #     ${BII_LIB_SRC}          File list to create the library
 #     ${BII_LIB_TYPE}         STATIC(default) or SHARED

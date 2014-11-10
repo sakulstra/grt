@@ -24,7 +24,7 @@ script:
 - rm ./biicode_project/blocks/sakulstra/grt/gui -r
 - rm ./biicode_project/blocks/sakulstra/grt/docs -r
 - rm ./biicode_project/blocks/sakulstra/grt/build -r
-- rm ./biicode_project/blocks/sakulstra/grt/examples/Tutorials -r
+- rm ./biicode_project/blocks/sakulstra/grt/examples -r
 - rm ./biicode_project/blocks/sakulstra/grt/extensions -r
 - rm ./biicode_project/blocks/sakulstra/grt/wiki -r
 - rm ./biicode_project/blocks/sakulstra/grt/GRT -r
