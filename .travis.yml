@@ -1,0 +1,39 @@
+language: cpp
+compiler:
+- gcc
+before_install:
+- sudo apt-get update -qq
+install:
+- wget http://www.biicode.com/downloads/latest/ubuntu64
+- mv ubuntu64 bii-ubuntu64.deb
+- (sudo dpkg -i bii-ubuntu64.deb) && sudo apt-get -f install
+- rm bii-ubuntu64.deb
+- wget https://s3.amazonaws.com/biibinaries/thirdparty/cmake-3.0.2-Linux-64.tar.gz
+- tar -xzf cmake-3.0.2-Linux-64.tar.gz
+- sudo cp -fR cmake-3.0.2-Linux-64/* /usr
+- rm -rf cmake-3.0.2-Linux-64
+- rm cmake-3.0.2-Linux-64.tar.gz
+script:
+- cmake --version
+- bii init biicode_project
+- mkdir -p ./biicode_project/blocks/sakulstra/grt
+- mv !(biicode_project) ./biicode_project/blocks/sakulstra/grt
+- mv ./biicode_project/blocks/sakulstra/grt/GRT/* ./biicode_project/blocks/sakulstra/grt
+- mv ./biicode_project/blocks/sakulstra/grt/biicode/* ./biicode_project/blocks/sakulstra/grt/
+- rm ./biicode_project/blocks/sakulstra/grt/biicode -r
+- rm ./biicode_project/blocks/sakulstra/grt/gui -r
+- rm ./biicode_project/blocks/sakulstra/grt/docs -r
+- rm ./biicode_project/blocks/sakulstra/grt/build -r
+- rm ./biicode_project/blocks/sakulstra/grt/examples -r
+- rm ./biicode_project/blocks/sakulstra/grt/extensions -r
+- rm ./biicode_project/blocks/sakulstra/grt/wiki -r
+- rm ./biicode_project/blocks/sakulstra/grt/GRT -r
+- cd biicode_project
+- bii find -um
+- bii cpp:build
+after_success:
+- bii user sakulstra -p $BII_SAKULSTRA_PASSWORD
+- bii publish
+env:
+  global:
+    secure: YjaSIGqjnOhYrJhLpJfw3mMIJMkZLtBTwYMkhz7FV1nea9hz4ltYifpvHd7n34v1Y4XXq+iInPe9ncskKAoRANtyY9uMmEx8x8ovrWuSQtNgqP9bXvN4oyu6+jKWAjbGEbpItttsfeqvUzUIceB695fMW4uiSpcP4MBYg4+jtGk=
